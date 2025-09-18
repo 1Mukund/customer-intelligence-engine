@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ci-engine
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8501
+      - key: PYTHONUNBUFFERED
+        value: 1
+    healthCheckPath: /_stcore/health

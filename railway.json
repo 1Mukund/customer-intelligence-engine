@@ -1,0 +1,12 @@
+{
+    "$schema": "https://railway.app/railway.schema.json",
+    "build": {
+        "builder": "DOCKERFILE"
+    },
+    "deploy": {
+        "startCommand": "streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.maxMessageSize 2048 --server.enableCORS false --server.enableXsrfProtection false",
+        "healthcheckPath": "/_stcore/health",
+        "restartPolicyType": "ON_FAILURE",
+        "restartPolicyMaxRetries": 10
+    }
+}
